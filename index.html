@@ -1,539 +1,283 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ERIK TORQUATO 4042 | Deputado Federal SP</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erik Torquato | Deputado Federal 4042</title>
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --cor-primaria: #1b4332;
+            --cor-secundaria: #ffb703;
+            --cor-fundo: #f8f9fa;
+            --cor-texto: #2b2d42;
+            --cor-card: #ffffff;
+        }
 
-  <!-- Fontes & Ícones -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
-  
-  <!-- Animações AOS -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <style>
-    :root {
-      --green-main: #10b981;
-      --green-dark: #064e3b;
-      --green-glow: #34d399;
-      --gold-accent: #fbbf24;
-      --dark-bg: #090d16;
-      --card-glass: rgba(22, 32, 50, 0.7);
-      --card-border: rgba(52, 211, 153, 0.2);
-      --text-white: #f8fafc;
-      --text-muted: #94a3b8;
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.6;
+        }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-    }
+        /* HEADER E NAVEGAÇÃO */
+        header {
+            background-color: var(--cor-primaria);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--cor-secundaria);
+        }
 
-    body {
-      background-color: var(--dark-bg);
-      color: var(--text-white);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+        .header-content h1 {
+            font-size: 2.8rem;
+            margin-bottom: 5px;
+            letter-spacing: -0.5px;
+        }
 
-    a { text-decoration: none; color: inherit; }
+        .header-content .numero-candidato {
+            display: inline-block;
+            background-color: var(--cor-secundaria);
+            color: #111;
+            font-weight: 800;
+            font-size: 1.5rem;
+            padding: 4px 16px;
+            border-radius: 50px;
+            margin: 10px 0;
+        }
 
-    /* BACKGROUND GLOW EFFECTS */
-    .glow-1 {
-      position: absolute;
-      top: -100px;
-      left: -100px;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(16,185,129,0.3) 0%, rgba(0,0,0,0) 70%);
-      z-index: 0;
-      pointer-events: none;
-    }
+        .header-content p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
 
-    .glow-2 {
-      position: absolute;
-      top: 40%;
-      right: -100px;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(251,191,36,0.15) 0%, rgba(0,0,0,0) 70%);
-      z-index: 0;
-      pointer-events: none;
-    }
+        /* CONTEÚDO PRINCIPAL */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
 
-    /* HEADER */
-    header {
-      background: rgba(9, 13, 22, 0.85);
-      backdrop-filter: blur(15px);
-      border-bottom: 1px solid var(--card-border);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+        .secao-titulo {
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+        .secao-titulo h2 {
+            font-size: 2.2rem;
+            color: var(--cor-primaria);
+            margin-bottom: 10px;
+        }
 
-    .logo {
-      font-size: 1.6rem;
-      font-weight: 900;
-      letter-spacing: -0.5px;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
+        .secao-titulo p {
+            color: #666;
+            font-size: 1.05rem;
+        }
 
-    .logo-badge {
-      background: linear-gradient(135deg, var(--gold-accent), #d97706);
-      color: #000;
-      padding: 0.2rem 0.8rem;
-      border-radius: 8px;
-      font-weight: 900;
-      font-size: 1.1rem;
-      box-shadow: 0 0 15px rgba(251, 191, 36, 0.4);
-    }
+        /* GALERIA DE CARds */
+        .galeria-campanha {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
 
-    .nav-btn {
-      background: linear-gradient(135deg, var(--green-main), var(--green-dark));
-      color: #fff;
-      padding: 0.7rem 1.4rem;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 0.9rem;
-      border: 1px solid var(--green-glow);
-      box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
-      transition: all 0.3s;
-    }
+        .item-galeria {
+            background: var(--cor-card);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-    .nav-btn:hover {
-      transform: translateY(-3px) scale(1.03);
-      box-shadow: 0 0 30px rgba(16, 185, 129, 0.6);
-    }
+        .item-galeria:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        }
 
-    /* HERO SECTION */
-    .hero {
-      position: relative;
-      padding: 4rem 1.5rem 6rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 3rem;
-      align-items: center;
-    }
+        .item-galeria img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
 
-    .number-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.8rem;
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid var(--green-glow);
-      padding: 0.5rem 1.2rem;
-      border-radius: 50px;
-      color: var(--green-glow);
-      font-weight: 800;
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
-    }
+        .item-galeria p {
+            padding: 18px;
+            margin: 0;
+            font-size: 15px;
+            color: var(--cor-texto);
+            text-align: center;
+            background: #fff;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            border-top: 1px solid #eee;
+        }
 
-    .hero-title {
-      font-size: 3.5rem;
-      font-weight: 900;
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-    }
+        /* SEÇÃO DE CONTATO / REDES SOCIAIS */
+        .contato-secao {
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-    .hero-title span {
-      background: linear-gradient(135deg, var(--green-glow) 0%, var(--gold-accent) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+        .contato-secao h3 {
+            font-size: 1.8rem;
+            color: var(--cor-primaria);
+            margin-bottom: 20px;
+        }
 
-    .hero-desc {
-      font-size: 1.15rem;
-      color: var(--text-muted);
-      margin-bottom: 2rem;
-    }
+        .botoes-contato {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
 
-    /* CARD ELETRÔNICO / URNA FOTO */
-    .hero-photo-card {
-      position: relative;
-      background: var(--card-glass);
-      backdrop-filter: blur(20px);
-      border: 1px solid var(--card-border);
-      border-radius: 28px;
-      padding: 1.5rem;
-      text-align: center;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-    }
+        .btn-contato {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: opacity 0.2s, transform 0.2s;
+        }
 
-    .photo-container {
-      position: relative;
-      width: 100%;
-      height: 380px;
-      border-radius: 20px;
-      overflow: hidden;
-      background: linear-gradient(180deg, rgba(6,78,59,0.3) 0%, rgba(9,13,22,0.9) 100%), 
-                  url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80') center/cover;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      padding: 1.5rem;
-      border: 1px solid rgba(255,255,255,0.1);
-    }
+        .btn-contato:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
 
-    .photo-caption {
-      background: rgba(0,0,0,0.8);
-      backdrop-filter: blur(10px);
-      padding: 0.8rem 1.5rem;
-      border-radius: 12px;
-      border: 1px solid var(--gold-accent);
-      color: var(--gold-accent);
-      font-weight: 800;
-      font-size: 1.2rem;
-    }
+        .btn-whatsapp {
+            background-color: #25d366;
+            color: white;
+        }
 
-    /* COUNTDOWN TIMER */
-    .timer-box {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 16px;
-      padding: 1.2rem;
-      margin-top: 1.5rem;
-      display: flex;
-      justify-content: space-around;
-      text-align: center;
-    }
+        .btn-instagram {
+            background: linear-space(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #df5950 45%, #c62368 60%, #32629b 90%);
+            color: white;
+        }
 
-    .timer-unit h4 {
-      font-size: 1.8rem;
-      font-weight: 900;
-      color: var(--green-glow);
-    }
+        .btn-email {
+            background-color: var(--cor-primaria);
+            color: white;
+        }
 
-    .timer-unit p {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-    }
+        /* RODAPÉ LEGAL */
+        footer {
+            background-color: #111;
+            color: #888;
+            text-align: center;
+            padding: 35px 20px;
+            margin-top: 60px;
+            font-size: 13px;
+        }
 
-    /* SEÇÕES COM GLASSMORPHISM */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 5rem 1.5rem;
-    }
+        footer p {
+            margin-bottom: 6px;
+        }
 
-    .section-title {
-      text-align: center;
-      font-size: 2.5rem;
-      font-weight: 900;
-      margin-bottom: 0.5rem;
-    }
-
-    .section-subtitle {
-      text-align: center;
-      color: var(--text-muted);
-      margin-bottom: 3.5rem;
-    }
-
-    /* INTERACTIVE TABS FOR PROPOSALS */
-    .tabs-nav {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 2.5rem;
-      flex-wrap: wrap;
-    }
-
-    .tab-btn {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      color: var(--text-white);
-      padding: 0.8rem 1.8rem;
-      border-radius: 50px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-
-    .tab-btn.active, .tab-btn:hover {
-      background: var(--green-main);
-      border-color: var(--green-glow);
-      box-shadow: 0 0 20px rgba(16,185,129,0.4);
-    }
-
-    .tab-content {
-      display: none;
-      background: var(--card-glass);
-      backdrop-filter: blur(15px);
-      border: 1px solid var(--card-border);
-      padding: 2.5rem;
-      border-radius: 24px;
-      animation: fadeIn 0.5s ease;
-    }
-
-    .tab-content.active { display: block; }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* TRAJETÓRIA TIMELINE */
-    .timeline {
-      position: relative;
-      border-left: 2px solid var(--green-main);
-      padding-left: 2rem;
-      margin-left: 1rem;
-    }
-
-    .timeline-item {
-      position: relative;
-      margin-bottom: 2.5rem;
-    }
-
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -2.6rem;
-      top: 0;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: var(--gold-accent);
-      box-shadow: 0 0 10px var(--gold-accent);
-    }
-
-    .timeline-date {
-      font-size: 0.9rem;
-      color: var(--gold-accent);
-      font-weight: 800;
-    }
-
-    .timeline-title {
-      font-size: 1.3rem;
-      font-weight: 800;
-      margin: 0.3rem 0;
-    }
-
-    /* SANTINHO DIGITAL GERADOR */
-    .santinho-box {
-      background: linear-gradient(135deg, #0f172a 0%, #064e3b 100%);
-      border: 2px solid var(--gold-accent);
-      border-radius: 24px;
-      padding: 3rem 2rem;
-      text-align: center;
-      box-shadow: 0 0 40px rgba(251, 191, 36, 0.2);
-    }
-
-    .btn-gold {
-      background: linear-gradient(135deg, var(--gold-accent), #d97706);
-      color: #000;
-      padding: 1rem 2.5rem;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      font-weight: 900;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.8rem;
-      margin-top: 1.5rem;
-      transition: all 0.3s;
-    }
-
-    .btn-gold:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(251, 191, 36, 0.6);
-    }
-
-    footer {
-      background: #04070d;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding: 3rem 1.5rem;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 992px) {
-      .hero { grid-template-columns: 1fr; }
-      .hero-title { font-size: 2.5rem; }
-    }
-  </style>
+        footer .legal {
+            color: #aaa;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
-  <div class="glow-1"></div>
-  <div class="glow-2"></div>
-
-  <!-- HEADER -->
-  <header>
-    <div class="nav-container">
-      <div class="logo">
-        ERIK TORQUATO <span class="logo-badge">4042</span>
-      </div>
-      <a href="https://wa.me/?text=Voto%20Erik%20Torquato%204042%20Deputado%20Federal!" target="_blank" class="nav-btn">
-        <i class="fa-brands fa-whatsapp"></i> Entrar na Onda
-      </a>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div data-aos="fade-right">
-      <div class="number-tag">
-        <i class="fa-solid fa-leaf"></i> ANTIPROIBICIONISMO & JUSTIÇA SOCIAL
-      </div>
-      <h1 class="hero-title">Pelo fim da guerra às drogas. <span>Aperta o verde!</span></h1>
-      <p class="hero-desc">Advogado criminalista, ex-flanelinha na Baixada Fluminense e ativista. Na luta pela legalização da Cannabis, saúde pública e justiça reparatória para São Paulo.</p>
-      
-      <!-- CONTADOR ELEIÇÕES -->
-      <div class="timer-box">
-        <div class="timer-unit">
-          <h4 id="days">00</h4>
-          <p>Dias</p>
+    <header>
+        <div class="header-content">
+            <h1>Erik Torquato</h1>
+            <div class="numero-candidato">4042</div>
+            <p>Deputado Federal • São Paulo</p>
         </div>
-        <div class="timer-unit">
-          <h4 id="hours">00</h4>
-          <p>Horas</p>
+    </header>
+
+    <main class="container">
+        
+        <!-- Galeria de Imagens -->
+        <div class="secao-titulo">
+            <h2>Material Oficial de Campanha</h2>
+            <p>Acompanhe nossas propostas e imagens para transformar São Paulo</p>
         </div>
-        <div class="timer-unit">
-          <h4 id="minutes">00</h4>
-          <p>Minutos</p>
+
+        <div class="galeria-campanha">
+            <div class="item-galeria">
+                <img src="img_rua_congresso.jpg" alt="Da Rua para o Congresso 4042">
+                <p>Da Rua para o Congresso 4042</p>
+            </div>
+            
+            <div class="item-galeria">
+                <img src="img_fim_proibicao.jpg" alt="Pelo Fim da Proibição, o Voto é a Solução">
+                <p>Pelo Fim da Proibição, o Voto é a Solução</p>
+            </div>
+            
+            <div class="item-galeria">
+                <img src="img_4042_aperta_verde.jpg" alt="Erik Torquato - Deputado Federal 4042">
+                <p>Erik Torquato - Deputado Federal 4042</p>
+            </div>
+            
+            <div class="item-galeria">
+                <img src="img_independencia_cultivo.jpg" alt="7 de Setembro - Independência para Conquistar">
+                <p>7 de Setembro - Independência para Conquistar</p>
+            </div>
+            
+            <div class="item-galeria">
+                <img src="img_estufa_cultivo.jpg" alt="Independência para Quem Precisa Cultivar o Próprio Remédio">
+                <p>Independência para Quem Precisa Cultivar o Próprio Remédio</p>
+            </div>
         </div>
-      </div>
-    </div>
 
-    <div class="hero-photo-card" data-aos="fade-left">
-      <div class="photo-container">
-        <div class="photo-caption">
-          <i class="fa-solid fa-check-to-slot"></i> ERIK TORQUATO 4042
-        </div>
-      </div>
-      <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.85rem;">
-        Candidato a Deputado Federal • PSB São Paulo
-      </p>
-    </div>
-  </section>
+        <!-- Seção de Contato -->
+        <section class="contato-secao">
+            <h3>Fale Conosco / Participe da Campanha</h3>
+            <p>Entre em contato direto pelo WhatsApp, mande um e-mail ou acompanhe o perfil oficial no Instagram.</p>
+            
+            <div class="botoes-contato">
+                <!-- WhatsApp (Substitua o número no link se precisar) -->
+                <a href="https://wa.me/5511974120420" target="_blank" class="btn-contato btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i> (11) 97412-0420
+                </a>
 
-  <!-- BANDEIRAS / PROPOSTAS INTERATIVAS -->
-  <section class="container">
-    <h2 class="section-title" data-aos="fade-up">Propostas para o Congresso</h2>
-    <p class="section-subtitle" data-aos="fade-up">Clique nas abas abaixo para ver os compromissos de mandato:</p>
+                <!-- Instagram -->
+                <a href="https://instagram.com/eriktorquatoadvogado" target="_blank" class="btn-contato btn-instagram">
+                    <i class="fa-brands fa-instagram"></i> @eriktorquatoadvogado
+                </a>
 
-    <div class="tabs-nav" data-aos="fade-up">
-      <button class="tab-btn active" onclick="openTab(event, 'tab1')">🌿 Regulamentação da Cannabis</button>
-      <button class="tab-btn" onclick="openTab(event, 'tab2')">🏥 SUS & Saúde Medicinal</button>
-      <button class="tab-btn" onclick="openTab(event, 'tab3')">⚖️ Descarceramento & Direitos</button>
-    </div>
+                <!-- E-mail -->
+                <a href="mailto:Eriktorquato.adv@gmail.com" class="btn-contato btn-email">
+                    <i class="fa-solid fa-envelope"></i> Eriktorquato.adv@gmail.com
+                </a>
+            </div>
+        </section>
 
-    <!-- TAB 1 -->
-    <div id="tab1" class="tab-content active">
-      <h3>Legalização com Impacto Econômico e Social</h3>
-      <p style="margin-top: 1rem; color: #cbd5e1;">A regulamentação do mercado de Cannabis no Brasil pode gerar bilhões em impostos, criar empregos formais na agricultura e indústria, e retirar o monopólio das mãos do crime organizado. Defenderemos a reparação histórica para populações periféricas.</p>
-    </div>
+    </main>
 
-    <!-- TAB 2 -->
-    <div id="tab2" class="tab-content">
-      <h3>Cannabis Medicinal Universal no SUS</h3>
-      <p style="margin-top: 1rem; color: #cbd5e1;">Nenhum paciente deve ser tratado como criminoso por buscar saúde. Nossa prioridade será aprovar legislação federal garantindo óleo e derivados de Cannabis gratuitos via SUS, além do direito ao auto-cultivo terapêutico e suporte às associações.</p>
-    </div>
+    <footer>
+        <p class="legal">Propaganda Eleitoral | PSB 40 | CNPJ: 68.437.669/0001-89</p>
+        <p>Erik Torquato Pinto — Candidato a Deputado Federal por São Paulo</p>
+    </footer>
 
-    <!-- TAB 3 -->
-    <div id="tab3" class="tab-content">
-      <h3>Fim da Perseguição à Periferia</h3>
-      <p style="margin-top: 1rem; color: #cbd5e1;">A atual Lei de Drogas atua como mecanismo de encarceramento em massa da juventude negra e pobre. Atuaremos na reformulação do artigo 28 e na diferenciação clara e objetiva entre usuário e traficante, combatendo o racismo estrutural.</p>
-    </div>
-  </section>
-
-  <!-- TRAJETÓRIA -->
-  <section class="container">
-    <h2 class="section-title" data-aos="fade-up">De Flanelinha a Advogado do Povo</h2>
-    <p class="section-subtitle" data-aos="fade-up">Conheça a história de superação e coragem de Erik Torquato</p>
-
-    <div class="timeline" data-aos="fade-up">
-      <div class="timeline-item">
-        <span class="timeline-date">Origens na Baixada</span>
-        <h4 class="timeline-title">A Infância e a Vida nas Ruas</h4>
-        <p style="color: var(--text-muted);">Trabalhou como flanelinha em Nova Iguaçu (RJ), vivenciando de perto as violências, a falta de oportunidades e os estigmas da perseguição policial na periferia.</p>
-      </div>
-
-      <div class="timeline-item">
-        <span class="timeline-date">Formação Acadêmica</span>
-        <h4 class="timeline-title">Ingresso e Formação na UERJ</h4>
-        <p style="color: var(--text-muted);">Superou adversidades para ingressar na Faculdade de Direito da UERJ, onde transformou sua vivência em ativismo antiproibicionista e pesquisa jurídica.</p>
-      </div>
-
-      <div class="timeline-item">
-        <span class="timeline-date">Carreira Profissional</span>
-        <h4 class="timeline-title">Referência em Advocacia Canábica</h4>
-        <p style="color: var(--text-muted);">Tornou-se um dos principais advogados criminalistas do país na obtenção de Habeas Corpus para cultivo medicinal e na defesa dos direitos de cultivadores e associações.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SANTINHO DIGITAL -->
-  <section class="container">
-    <div class="santinho-box" data-aos="zoom-in">
-      <h2 style="font-weight: 900; font-size: 2.2rem;">Multiplique esse Voto! 🚀</h2>
-      <p style="color: #cbd5e1; max-width: 600px; margin: 0.5rem auto 0;">Compartilhe a candidatura do Erik Torquato no seu WhatsApp e ajude a eleger a voz antiproibicionista no Congresso!</p>
-      
-      <a href="https://api.whatsapp.com/send?text=Conhe%C3%A7a%20a%20candidatura%20de%20Erik%20Torquato%204042%20para%20Deputado%20Federal%20SP!" target="_blank" class="btn-gold">
-        <i class="fa-brands fa-whatsapp" style="font-size: 1.5rem;"></i> Enviar Santinho no WhatsApp
-      </a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p><strong>ERIK TORQUATO PINTO — CANDIDATO A DEPUTADO FEDERAL (SP)</strong></p>
-    <p>Número de Urna: <strong>4042</strong> | Partido Socialista Brasileiro (PSB)</p>
-    <p style="margin-top: 0.5rem; font-size: 0.8rem;">Eleições 2026 • Propaganda Eleitoral</p>
-  </footer>
-
-  <!-- SCRIPTS -->
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 800, once: true });
-
-    /* TAB SYSTEM */
-    function openTab(evt, tabName) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tab-content");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].classList.remove("active");
-      }
-      tablinks = document.getElementsByClassName("tab-btn");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].classList.remove("active");
-      }
-      document.getElementById(tabName).classList.add("active");
-      evt.currentTarget.classList.add("active");
-    }
-
-    /* COUNTDOWN TIMER */
-    const electionDate = new Date("October 4, 2026 08:00:00").getTime();
-    setInterval(function() {
-      const now = new Date().getTime();
-      const distance = electionDate - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
-      document.getElementById("days").innerText = days > 0 ? days : "00";
-      document.getElementById("hours").innerText = hours > 0 ? hours : "00";
-      document.getElementById("minutes").innerText = minutes > 0 ? minutes : "00";
-    }, 1000);
-  </script>
 </body>
 </html>
