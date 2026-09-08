@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Erik Torquato | Deputado Federal 4042</title>
-    <!-- Font Awesome para ícones -->
+    <!-- Ícones oficiais -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --cor-primaria: #1b4332;
             --cor-secundaria: #ffb703;
-            --cor-fundo: #f8f9fa;
+            --cor-fundo: #f4f6f8;
             --cor-texto: #2b2d42;
             --cor-card: #ffffff;
         }
@@ -28,38 +28,40 @@
             line-height: 1.6;
         }
 
-        /* HEADER E NAVEGAÇÃO */
         header {
-            background-color: var(--cor-primaria);
+            background: linear-gradient(135deg, #1b4332, #2d6a4f);
             color: white;
-            padding: 50px 20px;
+            padding: 60px 20px;
             text-align: center;
-            border-bottom: 5px solid var(--cor-secundaria);
+            border-bottom: 6px solid var(--cor-secundaria);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         .header-content h1 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             margin-bottom: 5px;
-            letter-spacing: -0.5px;
+            font-weight: 800;
+            letter-spacing: -1px;
         }
 
-        .header-content .numero-candidato {
+        .numero-candidato {
             display: inline-block;
             background-color: var(--cor-secundaria);
             color: #111;
-            font-weight: 800;
-            font-size: 1.5rem;
-            padding: 4px 16px;
+            font-weight: 900;
+            font-size: 1.8rem;
+            padding: 6px 22px;
             border-radius: 50px;
-            margin: 10px 0;
+            margin: 15px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
         .header-content p {
-            font-size: 1.1rem;
-            opacity: 0.9;
+            font-size: 1.2rem;
+            opacity: 0.95;
+            font-weight: 300;
         }
 
-        /* CONTEÚDO PRINCIPAL */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -72,49 +74,49 @@
         }
 
         .secao-titulo h2 {
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             color: var(--cor-primaria);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .secao-titulo p {
-            color: #666;
-            font-size: 1.05rem;
+            color: #555;
+            font-size: 1.1rem;
         }
 
-        /* GALERIA DE CARds */
         .galeria-campanha {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
             margin-bottom: 60px;
         }
 
         .item-galeria {
             background: var(--cor-card);
-            border-radius: 12px;
+            border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
             display: flex;
             flex-direction: column;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .item-galeria:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+            transform: translateY(-8px);
+            box-shadow: 0 14px 35px rgba(0, 0, 0, 0.15);
         }
 
         .item-galeria img {
             width: 100%;
             height: auto;
             display: block;
+            border-bottom: 1px solid #eee;
         }
 
         .item-galeria p {
-            padding: 18px;
+            padding: 20px;
             margin: 0;
-            font-size: 15px;
+            font-size: 16px;
             color: var(--cor-texto);
             text-align: center;
             background: #fff;
@@ -122,25 +124,30 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 600;
-            border-top: 1px solid #eee;
+            font-weight: 700;
         }
 
-        /* SEÇÃO DE CONTATO / REDES SOCIAIS */
         .contato-secao {
-            background-color: #ffffff;
+            background: linear-gradient(145deg, #ffffff, #fdfdfd);
             border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+            padding: 50px 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
             text-align: center;
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
+            border: 1px solid #eaeaea;
         }
 
         .contato-secao h3 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: var(--cor-primaria);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+        }
+
+        .contato-secao p {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.05rem;
         }
 
         .botoes-contato {
@@ -148,24 +155,24 @@
             justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
-            margin-top: 25px;
         }
 
         .btn-contato {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            padding: 12px 24px;
-            border-radius: 8px;
+            padding: 14px 28px;
+            border-radius: 10px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: opacity 0.2s, transform 0.2s;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         .btn-contato:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
+            opacity: 0.92;
+            transform: translateY(-3px);
         }
 
         .btn-whatsapp {
@@ -174,7 +181,6 @@
         }
 
         .btn-instagram {
-            background: linear-space(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
             background: radial-gradient(circle at 30% 107%, #fdf497 0%, #df5950 45%, #c62368 60%, #32629b 90%);
             color: white;
         }
@@ -184,23 +190,23 @@
             color: white;
         }
 
-        /* RODAPÉ LEGAL */
         footer {
             background-color: #111;
-            color: #888;
+            color: #999;
             text-align: center;
-            padding: 35px 20px;
-            margin-top: 60px;
+            padding: 40px 20px;
+            margin-top: 70px;
             font-size: 13px;
         }
 
         footer p {
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
         footer .legal {
-            color: #aaa;
+            color: #fff;
             font-weight: bold;
+            font-size: 14px;
         }
     </style>
 </head>
@@ -216,7 +222,6 @@
 
     <main class="container">
         
-        <!-- Galeria de Imagens -->
         <div class="secao-titulo">
             <h2>Material Oficial de Campanha</h2>
             <p>Acompanhe nossas propostas e imagens para transformar São Paulo</p>
@@ -249,23 +254,19 @@
             </div>
         </div>
 
-        <!-- Seção de Contato -->
         <section class="contato-secao">
             <h3>Fale Conosco / Participe da Campanha</h3>
             <p>Entre em contato direto pelo WhatsApp, mande um e-mail ou acompanhe o perfil oficial no Instagram.</p>
             
             <div class="botoes-contato">
-                <!-- WhatsApp (Substitua o número no link se precisar) -->
                 <a href="https://wa.me/5511974120420" target="_blank" class="btn-contato btn-whatsapp">
                     <i class="fa-brands fa-whatsapp"></i> (11) 97412-0420
                 </a>
 
-                <!-- Instagram -->
                 <a href="https://instagram.com/eriktorquatoadvogado" target="_blank" class="btn-contato btn-instagram">
                     <i class="fa-brands fa-instagram"></i> @eriktorquatoadvogado
                 </a>
 
-                <!-- E-mail -->
                 <a href="mailto:Eriktorquato.adv@gmail.com" class="btn-contato btn-email">
                     <i class="fa-solid fa-envelope"></i> Eriktorquato.adv@gmail.com
                 </a>
