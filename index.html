@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Erik Torquato 4042 | Deputado Federal SP</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-green: #15803d;
+      --dark-green: #064e3b;
+      --accent-gold: #f59e0b;
+      --dark-bg: #0f172a;
+      --card-bg: #1e293b;
+      --light-bg: #f8fafc;
+      --text-dark: #0f172a;
+      --text-light: #f8fafc;
+      --text-muted: #64748b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--light-bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER */
+    header {
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 3px solid var(--accent-gold);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.8rem 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+    }
+
+    .logo-text {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-badge {
+      background: var(--accent-gold);
+      color: var(--dark-bg);
+      padding: 0.2rem 0.6rem;
+      border-radius: 8px;
+      font-weight: 900;
+    }
+
+    .nav-btn {
+      background: var(--primary-green);
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
+    }
+
+    .nav-btn:hover {
+      background: var(--accent-gold);
+      color: var(--dark-bg);
+    }
+
+    /* HERO BANNER */
+    .hero {
+      background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-green) 100%);
+      color: #fff;
+      padding: 4rem 1.2rem;
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .candidate-number {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--accent-gold);
+      color: var(--dark-bg);
+      font-size: 2.8rem;
+      font-weight: 900;
+      padding: 0.2rem 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title {
+      font-size: 2.8rem;
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title span {
+      color: var(--accent-gold);
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 2rem;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    .btn-action {
+      display: block;
+      width: 100%;
+      background: var(--accent-gold);
+      color: var(--dark-bg);
+      padding: 0.9rem;
+      border-radius: 12px;
+      font-weight: 800;
+      margin-top: 1rem;
+      transition: all 0.3s;
+    }
+
+    .btn-action:hover {
+      background: #fff;
+    }
+
+    /* BANDEIRAS */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 1.2rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--dark-green);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      border-top: 5px solid var(--primary-green);
+    }
+
+    .card-icon {
+      font-size: 2rem;
+      color: var(--primary-green);
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark-bg);
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1.2rem;
+      border-top: 3px solid var(--accent-gold);
+    }
+
+    @media (max-width: 768px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+      }
+      .hero-title {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <div class="logo-text">
+        ERIK TORQUATO <span class="logo-badge">4042</span>
+      </div>
+      <a href="https://instagram.com/eriktorquatoadvogado" target="_blank" class="nav-btn">
+        <i class="fa-brands fa-instagram"></i> Instagram
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-container">
+      <div>
+        <div class="candidate-number">
+          <i class="fa-solid fa-vote-yea"></i> 4042
+        </div>
+        <h1 class="hero-title">Pelo fim da <span>guerra às drogas</span></h1>
+        <p class="hero-subtitle">Advogado e ativista na defesa dos direitos fundamentais, acesso à Cannabis medicinal e justiça social em São Paulo.</p>
+      </div>
+
+      <div class="hero-card">
+        <h3>Aperta o verde! 🌿</h3>
+        <p>Receba materiais de campanha, santinhos digitais e informações sobre a candidatura no seu WhatsApp.</p>
+        <a href="https://taplink.cc/eriktorquato.adv" target="_blank" class="btn-action">
+          <i class="fa-solid fa-download"></i> Baixar Materiais de Campanha
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROPOSTAS -->
+  <section class="container">
+    <h2 class="section-title">Eixos de Atuação</h2>
+    <p class="section-subtitle">Conheça as principais bandeiras levadas ao Congresso Nacional</p>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-cannabis"></i></div>
+        <h3>Regulamentação & Fim da Proibição</h3>
+        <p>Substituição da política proibicionista por regulamentação responsável, gerando empregos, impostos e reduzindo a violência.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-notes-medical"></i></div>
+        <h3>Cannabis Medicinal no SUS</h3>
+        <p>Garantia de acesso gratuito ao tratamento com Cannabis via SUS para pacientes e suporte legal ao cultivo associativo.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+        <h3>Advocacia Popular & Direitos</h3>
+        <p>Defesa dos direitos individuais, combate ao encarceramento em massa e proteção jurídica aos trabalhadores da área.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><strong>ERIK TORQUATO 4042 — DEPUTADO FEDERAL SP</strong></p>
+    <p>Partido Socialista Brasileiro (PSB) | Eleições</p>
+  </footer>
+
+</body>
+</html>
