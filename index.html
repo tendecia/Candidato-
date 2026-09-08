@@ -3,298 +3,537 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Erik Torquato 4042 | Deputado Federal SP</title>
+  <title>ERIK TORQUATO 4042 | Deputado Federal SP</title>
 
-  <!-- Font Awesome Icons -->
+  <!-- Fontes & Ícones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
   
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Animações AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
   <style>
     :root {
-      --primary-green: #15803d;
-      --dark-green: #064e3b;
-      --accent-gold: #f59e0b;
-      --dark-bg: #0f172a;
-      --card-bg: #1e293b;
-      --light-bg: #f8fafc;
-      --text-dark: #0f172a;
-      --text-light: #f8fafc;
-      --text-muted: #64748b;
+      --green-main: #10b981;
+      --green-dark: #064e3b;
+      --green-glow: #34d399;
+      --gold-accent: #fbbf24;
+      --dark-bg: #090d16;
+      --card-glass: rgba(22, 32, 50, 0.7);
+      --card-border: rgba(52, 211, 153, 0.2);
+      --text-white: #f8fafc;
+      --text-muted: #94a3b8;
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
     }
 
     body {
-      background-color: var(--light-bg);
-      color: var(--text-dark);
+      background-color: var(--dark-bg);
+      color: var(--text-white);
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
+    a { text-decoration: none; color: inherit; }
+
+    /* BACKGROUND GLOW EFFECTS */
+    .glow-1 {
+      position: absolute;
+      top: -100px;
+      left: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(16,185,129,0.3) 0%, rgba(0,0,0,0) 70%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .glow-2 {
+      position: absolute;
+      top: 40%;
+      right: -100px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(251,191,36,0.15) 0%, rgba(0,0,0,0) 70%);
+      z-index: 0;
+      pointer-events: none;
     }
 
     /* HEADER */
     header {
-      background: rgba(15, 23, 42, 0.95);
-      backdrop-filter: blur(10px);
+      background: rgba(9, 13, 22, 0.85);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid var(--card-border);
       position: sticky;
       top: 0;
       z-index: 1000;
-      border-bottom: 3px solid var(--accent-gold);
     }
 
     .nav-container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0.8rem 1.2rem;
+      padding: 1rem 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: #fff;
     }
 
-    .logo-text {
-      font-size: 1.4rem;
+    .logo {
+      font-size: 1.6rem;
       font-weight: 900;
-      color: #fff;
+      letter-spacing: -0.5px;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.6rem;
     }
 
     .logo-badge {
-      background: var(--accent-gold);
-      color: var(--dark-bg);
-      padding: 0.2rem 0.6rem;
+      background: linear-gradient(135deg, var(--gold-accent), #d97706);
+      color: #000;
+      padding: 0.2rem 0.8rem;
       border-radius: 8px;
       font-weight: 900;
+      font-size: 1.1rem;
+      box-shadow: 0 0 15px rgba(251, 191, 36, 0.4);
     }
 
     .nav-btn {
-      background: var(--primary-green);
+      background: linear-gradient(135deg, var(--green-main), var(--green-dark));
       color: #fff;
-      padding: 0.6rem 1.2rem;
+      padding: 0.7rem 1.4rem;
       border-radius: 50px;
       font-weight: 700;
-      font-size: 0.85rem;
-      transition: all 0.3s ease;
-    }
-
-    .nav-btn:hover {
-      background: var(--accent-gold);
-      color: var(--dark-bg);
-    }
-
-    /* HERO BANNER */
-    .hero {
-      background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-green) 100%);
-      color: #fff;
-      padding: 4rem 1.2rem;
-    }
-
-    .hero-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 2.5rem;
-      align-items: center;
-    }
-
-    .candidate-number {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      background: var(--accent-gold);
-      color: var(--dark-bg);
-      font-size: 2.8rem;
-      font-weight: 900;
-      padding: 0.2rem 1.5rem;
-      border-radius: 12px;
-      margin-bottom: 1rem;
-    }
-
-    .hero-title {
-      font-size: 2.8rem;
-      font-weight: 900;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-    }
-
-    .hero-title span {
-      color: var(--accent-gold);
-    }
-
-    .hero-subtitle {
-      font-size: 1.1rem;
-      color: #cbd5e1;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-card {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 2rem;
-      border-radius: 20px;
-      text-align: center;
-    }
-
-    .btn-action {
-      display: block;
-      width: 100%;
-      background: var(--accent-gold);
-      color: var(--dark-bg);
-      padding: 0.9rem;
-      border-radius: 12px;
-      font-weight: 800;
-      margin-top: 1rem;
+      font-size: 0.9rem;
+      border: 1px solid var(--green-glow);
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
       transition: all 0.3s;
     }
 
-    .btn-action:hover {
-      background: #fff;
+    .nav-btn:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 0 30px rgba(16, 185, 129, 0.6);
     }
 
-    /* BANDEIRAS */
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      padding: 4rem 1.5rem 6rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .number-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid var(--green-glow);
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
+      color: var(--green-glow);
+      font-weight: 800;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, var(--green-glow) 0%, var(--gold-accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    /* CARD ELETRÔNICO / URNA FOTO */
+    .hero-photo-card {
+      position: relative;
+      background: var(--card-glass);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--card-border);
+      border-radius: 28px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+
+    .photo-container {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      border-radius: 20px;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(6,78,59,0.3) 0%, rgba(9,13,22,0.9) 100%), 
+                  url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80') center/cover;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .photo-caption {
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(10px);
+      padding: 0.8rem 1.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--gold-accent);
+      color: var(--gold-accent);
+      font-weight: 800;
+      font-size: 1.2rem;
+    }
+
+    /* COUNTDOWN TIMER */
+    .timer-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 1.2rem;
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+    }
+
+    .timer-unit h4 {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--green-glow);
+    }
+
+    .timer-unit p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    /* SEÇÕES COM GLASSMORPHISM */
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 4rem 1.2rem;
+      padding: 5rem 1.5rem;
     }
 
     .section-title {
       text-align: center;
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       font-weight: 900;
-      color: var(--dark-green);
       margin-bottom: 0.5rem;
     }
 
     .section-subtitle {
       text-align: center;
       color: var(--text-muted);
-      margin-bottom: 3rem;
+      margin-bottom: 3.5rem;
     }
 
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.8rem;
+    /* INTERACTIVE TABS FOR PROPOSALS */
+    .tabs-nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
     }
 
-    .card {
-      background: #fff;
-      padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-      border-top: 5px solid var(--primary-green);
+    .tab-btn {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--text-white);
+      padding: 0.8rem 1.8rem;
+      border-radius: 50px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
     }
 
-    .card-icon {
-      font-size: 2rem;
-      color: var(--primary-green);
-      margin-bottom: 1rem;
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--green-main);
+      border-color: var(--green-glow);
+      box-shadow: 0 0 20px rgba(16,185,129,0.4);
     }
 
-    .card h3 {
+    .tab-content {
+      display: none;
+      background: var(--card-glass);
+      backdrop-filter: blur(15px);
+      border: 1px solid var(--card-border);
+      padding: 2.5rem;
+      border-radius: 24px;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .tab-content.active { display: block; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* TRAJETÓRIA TIMELINE */
+    .timeline {
+      position: relative;
+      border-left: 2px solid var(--green-main);
+      padding-left: 2rem;
+      margin-left: 1rem;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2.6rem;
+      top: 0;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--gold-accent);
+      box-shadow: 0 0 10px var(--gold-accent);
+    }
+
+    .timeline-date {
+      font-size: 0.9rem;
+      color: var(--gold-accent);
+      font-weight: 800;
+    }
+
+    .timeline-title {
       font-size: 1.3rem;
-      margin-bottom: 0.5rem;
+      font-weight: 800;
+      margin: 0.3rem 0;
     }
 
-    /* FOOTER */
-    footer {
-      background: var(--dark-bg);
-      color: #fff;
+    /* SANTINHO DIGITAL GERADOR */
+    .santinho-box {
+      background: linear-gradient(135deg, #0f172a 0%, #064e3b 100%);
+      border: 2px solid var(--gold-accent);
+      border-radius: 24px;
+      padding: 3rem 2rem;
       text-align: center;
-      padding: 2rem 1.2rem;
-      border-top: 3px solid var(--accent-gold);
+      box-shadow: 0 0 40px rgba(251, 191, 36, 0.2);
     }
 
-    @media (max-width: 768px) {
-      .hero-container {
-        grid-template-columns: 1fr;
-      }
-      .hero-title {
-        font-size: 2.2rem;
-      }
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold-accent), #d97706);
+      color: #000;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 900;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+      transition: all 0.3s;
+    }
+
+    .btn-gold:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(251, 191, 36, 0.6);
+    }
+
+    footer {
+      background: #04070d;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 3rem 1.5rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 992px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-title { font-size: 2.5rem; }
     }
   </style>
 </head>
 <body>
 
+  <div class="glow-1"></div>
+  <div class="glow-2"></div>
+
   <!-- HEADER -->
   <header>
     <div class="nav-container">
-      <div class="logo-text">
+      <div class="logo">
         ERIK TORQUATO <span class="logo-badge">4042</span>
       </div>
-      <a href="https://instagram.com/eriktorquatoadvogado" target="_blank" class="nav-btn">
-        <i class="fa-brands fa-instagram"></i> Instagram
+      <a href="https://wa.me/?text=Voto%20Erik%20Torquato%204042%20Deputado%20Federal!" target="_blank" class="nav-btn">
+        <i class="fa-brands fa-whatsapp"></i> Entrar na Onda
       </a>
     </div>
   </header>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-container">
-      <div>
-        <div class="candidate-number">
-          <i class="fa-solid fa-vote-yea"></i> 4042
+    <div data-aos="fade-right">
+      <div class="number-tag">
+        <i class="fa-solid fa-leaf"></i> ANTIPROIBICIONISMO & JUSTIÇA SOCIAL
+      </div>
+      <h1 class="hero-title">Pelo fim da guerra às drogas. <span>Aperta o verde!</span></h1>
+      <p class="hero-desc">Advogado criminalista, ex-flanelinha na Baixada Fluminense e ativista. Na luta pela legalização da Cannabis, saúde pública e justiça reparatória para São Paulo.</p>
+      
+      <!-- CONTADOR ELEIÇÕES -->
+      <div class="timer-box">
+        <div class="timer-unit">
+          <h4 id="days">00</h4>
+          <p>Dias</p>
         </div>
-        <h1 class="hero-title">Pelo fim da <span>guerra às drogas</span></h1>
-        <p class="hero-subtitle">Advogado e ativista na defesa dos direitos fundamentais, acesso à Cannabis medicinal e justiça social em São Paulo.</p>
+        <div class="timer-unit">
+          <h4 id="hours">00</h4>
+          <p>Horas</p>
+        </div>
+        <div class="timer-unit">
+          <h4 id="minutes">00</h4>
+          <p>Minutos</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-photo-card" data-aos="fade-left">
+      <div class="photo-container">
+        <div class="photo-caption">
+          <i class="fa-solid fa-check-to-slot"></i> ERIK TORQUATO 4042
+        </div>
+      </div>
+      <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.85rem;">
+        Candidato a Deputado Federal • PSB São Paulo
+      </p>
+    </div>
+  </section>
+
+  <!-- BANDEIRAS / PROPOSTAS INTERATIVAS -->
+  <section class="container">
+    <h2 class="section-title" data-aos="fade-up">Propostas para o Congresso</h2>
+    <p class="section-subtitle" data-aos="fade-up">Clique nas abas abaixo para ver os compromissos de mandato:</p>
+
+    <div class="tabs-nav" data-aos="fade-up">
+      <button class="tab-btn active" onclick="openTab(event, 'tab1')">🌿 Regulamentação da Cannabis</button>
+      <button class="tab-btn" onclick="openTab(event, 'tab2')">🏥 SUS & Saúde Medicinal</button>
+      <button class="tab-btn" onclick="openTab(event, 'tab3')">⚖️ Descarceramento & Direitos</button>
+    </div>
+
+    <!-- TAB 1 -->
+    <div id="tab1" class="tab-content active">
+      <h3>Legalização com Impacto Econômico e Social</h3>
+      <p style="margin-top: 1rem; color: #cbd5e1;">A regulamentação do mercado de Cannabis no Brasil pode gerar bilhões em impostos, criar empregos formais na agricultura e indústria, e retirar o monopólio das mãos do crime organizado. Defenderemos a reparação histórica para populações periféricas.</p>
+    </div>
+
+    <!-- TAB 2 -->
+    <div id="tab2" class="tab-content">
+      <h3>Cannabis Medicinal Universal no SUS</h3>
+      <p style="margin-top: 1rem; color: #cbd5e1;">Nenhum paciente deve ser tratado como criminoso por buscar saúde. Nossa prioridade será aprovar legislação federal garantindo óleo e derivados de Cannabis gratuitos via SUS, além do direito ao auto-cultivo terapêutico e suporte às associações.</p>
+    </div>
+
+    <!-- TAB 3 -->
+    <div id="tab3" class="tab-content">
+      <h3>Fim da Perseguição à Periferia</h3>
+      <p style="margin-top: 1rem; color: #cbd5e1;">A atual Lei de Drogas atua como mecanismo de encarceramento em massa da juventude negra e pobre. Atuaremos na reformulação do artigo 28 e na diferenciação clara e objetiva entre usuário e traficante, combatendo o racismo estrutural.</p>
+    </div>
+  </section>
+
+  <!-- TRAJETÓRIA -->
+  <section class="container">
+    <h2 class="section-title" data-aos="fade-up">De Flanelinha a Advogado do Povo</h2>
+    <p class="section-subtitle" data-aos="fade-up">Conheça a história de superação e coragem de Erik Torquato</p>
+
+    <div class="timeline" data-aos="fade-up">
+      <div class="timeline-item">
+        <span class="timeline-date">Origens na Baixada</span>
+        <h4 class="timeline-title">A Infância e a Vida nas Ruas</h4>
+        <p style="color: var(--text-muted);">Trabalhou como flanelinha em Nova Iguaçu (RJ), vivenciando de perto as violências, a falta de oportunidades e os estigmas da perseguição policial na periferia.</p>
       </div>
 
-      <div class="hero-card">
-        <h3>Aperta o verde! 🌿</h3>
-        <p>Receba materiais de campanha, santinhos digitais e informações sobre a candidatura no seu WhatsApp.</p>
-        <a href="https://taplink.cc/eriktorquato.adv" target="_blank" class="btn-action">
-          <i class="fa-solid fa-download"></i> Baixar Materiais de Campanha
-        </a>
+      <div class="timeline-item">
+        <span class="timeline-date">Formação Acadêmica</span>
+        <h4 class="timeline-title">Ingresso e Formação na UERJ</h4>
+        <p style="color: var(--text-muted);">Superou adversidades para ingressar na Faculdade de Direito da UERJ, onde transformou sua vivência em ativismo antiproibicionista e pesquisa jurídica.</p>
+      </div>
+
+      <div class="timeline-item">
+        <span class="timeline-date">Carreira Profissional</span>
+        <h4 class="timeline-title">Referência em Advocacia Canábica</h4>
+        <p style="color: var(--text-muted);">Tornou-se um dos principais advogados criminalistas do país na obtenção de Habeas Corpus para cultivo medicinal e na defesa dos direitos de cultivadores e associações.</p>
       </div>
     </div>
   </section>
 
-  <!-- PROPOSTAS -->
+  <!-- SANTINHO DIGITAL -->
   <section class="container">
-    <h2 class="section-title">Eixos de Atuação</h2>
-    <p class="section-subtitle">Conheça as principais bandeiras levadas ao Congresso Nacional</p>
-
-    <div class="grid-3">
-      <div class="card">
-        <div class="card-icon"><i class="fa-solid fa-cannabis"></i></div>
-        <h3>Regulamentação & Fim da Proibição</h3>
-        <p>Substituição da política proibicionista por regulamentação responsável, gerando empregos, impostos e reduzindo a violência.</p>
-      </div>
-
-      <div class="card">
-        <div class="card-icon"><i class="fa-solid fa-notes-medical"></i></div>
-        <h3>Cannabis Medicinal no SUS</h3>
-        <p>Garantia de acesso gratuito ao tratamento com Cannabis via SUS para pacientes e suporte legal ao cultivo associativo.</p>
-      </div>
-
-      <div class="card">
-        <div class="card-icon"><i class="fa-solid fa-scale-balanced"></i></div>
-        <h3>Advocacia Popular & Direitos</h3>
-        <p>Defesa dos direitos individuais, combate ao encarceramento em massa e proteção jurídica aos trabalhadores da área.</p>
-      </div>
+    <div class="santinho-box" data-aos="zoom-in">
+      <h2 style="font-weight: 900; font-size: 2.2rem;">Multiplique esse Voto! 🚀</h2>
+      <p style="color: #cbd5e1; max-width: 600px; margin: 0.5rem auto 0;">Compartilhe a candidatura do Erik Torquato no seu WhatsApp e ajude a eleger a voz antiproibicionista no Congresso!</p>
+      
+      <a href="https://api.whatsapp.com/send?text=Conhe%C3%A7a%20a%20candidatura%20de%20Erik%20Torquato%204042%20para%20Deputado%20Federal%20SP!" target="_blank" class="btn-gold">
+        <i class="fa-brands fa-whatsapp" style="font-size: 1.5rem;"></i> Enviar Santinho no WhatsApp
+      </a>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p><strong>ERIK TORQUATO 4042 — DEPUTADO FEDERAL SP</strong></p>
-    <p>Partido Socialista Brasileiro (PSB) | Eleições</p>
+    <p><strong>ERIK TORQUATO PINTO — CANDIDATO A DEPUTADO FEDERAL (SP)</strong></p>
+    <p>Número de Urna: <strong>4042</strong> | Partido Socialista Brasileiro (PSB)</p>
+    <p style="margin-top: 0.5rem; font-size: 0.8rem;">Eleições 2026 • Propaganda Eleitoral</p>
   </footer>
 
+  <!-- SCRIPTS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+
+    /* TAB SYSTEM */
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tab-content");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active");
+      }
+      tablinks = document.getElementsByClassName("tab-btn");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+      }
+      document.getElementById(tabName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+
+    /* COUNTDOWN TIMER */
+    const electionDate = new Date("October 4, 2026 08:00:00").getTime();
+    setInterval(function() {
+      const now = new Date().getTime();
+      const distance = electionDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+      document.getElementById("days").innerText = days > 0 ? days : "00";
+      document.getElementById("hours").innerText = hours > 0 ? hours : "00";
+      document.getElementById("minutes").innerText = minutes > 0 ? minutes : "00";
+    }, 1000);
+  </script>
 </body>
 </html>
